@@ -17,11 +17,13 @@ function App() {
 
   return (
     <CartProvider>
+    {/* <Fragment> */}
     {cartVisible && <Cart onClose={hideCartHandler} />}
       <Header onCartVisible={showCartHandler}/>
       <main>
         <Meals/>
       </main>
+      {/* </Fragment> */}
     </CartProvider>
   );
 }

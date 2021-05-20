@@ -8,21 +8,21 @@ const HeaderCartButton = (props) =>{
       const [btnIsAnimated,setBtnIsAnimated] = useState(false);
       const cartCtx = useContext(CartContext);
 
-      const {items} = cartCtx;
-     
+      const {items} = cartCtx;  
+          
       const numberOfCartItems = items.reduce((curNumber, item) => {
             return curNumber + item.amount;
-          }, 0);
-        
-          const btnClasses = `${styles.button} ${btnIsAnimated ? styles.bump : ''}`;
-        
+      }, 0);
+      
+      const btnClasses = `${styles.button} ${btnIsAnimated ? styles.bump : ''}`;
+      
       useEffect(()=>{
             if(items.length === 0){
                   return;
             }
             setBtnIsAnimated(true);
 
-            const timer = setTimeout(()=>{
+            const timer = setTimeout(()=>{ 
                   setBtnIsAnimated(false)
             },(300));
 

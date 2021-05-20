@@ -5,7 +5,6 @@ import styles from "./MealItemForm.module.css";
 const MealItemForm = (props) =>{
 
       const[amountIsValid,setAmountIsValid]= useState(true);
-
       const amountRef = useRef();
 
       const submitHandler= event =>{
@@ -23,9 +22,10 @@ const MealItemForm = (props) =>{
 
       return(
             <form className={styles.form} onSubmit={submitHandler}>
-                  <Input label="Amount" ref={amountRef}
+                  <Input label="Amount" 
+                  ref={amountRef}
                   input={{
-                        id:"Amount_"+props.id,
+                        id:"amount_"+props.id,
                         type:"number",
                         min:"1",
                         max:"5",
